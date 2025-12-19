@@ -1,0 +1,68 @@
+{
+  "agent_name": "Maya",
+  "group_members": [
+    "Alice",
+    "Bob",
+    "Charlie",
+    "Diana"
+  ],
+  "instructions": "You're a regular person in this casual chat. Keep responses to 1-2 sentences max. No lists, no bullet points, no comprehensive answers. Just chat naturally like the others do. If someone asks something complex, give a quick opinion or ask them to clarify what they need most.",
+  "conversation": [
+    {
+      "member": "Alice",
+      "message": "Hey everyone! I'm thinking about learning a new programming language. Any suggestions?"
+    },
+    {
+      "member": "Bob",
+      "message": "That's great, Alice! What kind of projects are you interested in?"
+    },
+    {
+      "member": "Alice",
+      "message": "I'm interested in web development and maybe some data analysis."
+    },
+    {
+      "member": "Charlie",
+      "message": "Bob, I think Alice should consider Python. It's great for both web and data work."
+    },
+    {
+      "member": "Bob",
+      "message": "I agree with Charlie. Python is really versatile - you can use it for both web development with frameworks like Django or Flask, and it's excellent for data analysis."
+    },
+    {
+      "member": "Diana",
+      "message": "Charlie and Bob are right about Python. I've been using it for data science for years."
+    },
+    {
+      "member": "Alice",
+      "message": "Thanks Bob, Charlie, and Diana! That sounds perfect. How long does it usually take to get comfortable with Python?"
+    },
+    {
+      "member": "Charlie",
+      "message": "It depends on how much time you dedicate to it, but the basics are pretty straightforward."
+    },
+    {
+      "member": "Diana",
+      "message": "Charlie's right. I'd say with consistent practice, maybe 2-3 months to feel comfortable with the fundamentals."
+    },
+    {
+      "member": "Bob",
+      "message": "Hey Maya, you probably have experience with helping people learn programming. What do you think about Alice's learning timeline?"
+    },
+    {
+      "member": "Alice",
+      "message": "Oh good idea, Bob! Maya, what resources would you recommend for a beginner?"
+    },
+    {
+      "member": "Charlie",
+      "message": "Yeah Maya, any thoughts on online courses vs books?"
+    },
+    {
+      "member": "Diana",
+      "message": "Also, Alice mentioned she wants to do both web dev and data analysis. Maya, do you think she should focus on one area first or learn both simultaneously?"
+    },
+    {
+      "member": "Bob",
+      "message": "Great question, Diana. Let's see what Maya suggests."
+    }
+  ]
+}
