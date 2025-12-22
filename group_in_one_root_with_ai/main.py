@@ -2,6 +2,7 @@
 """Main CLI application for the group chat AI agent."""
 
 import json
+import time
 from pathlib import Path
 from typing import Optional
 
@@ -79,6 +80,12 @@ def run(
         "-t",
         help="Show the agent's internal thoughts and reasoning",
     ),
+    debug: bool = typer.Option(
+        False,
+        "--debug",
+        "-d",
+        help="Show timing and debug information",
+    ),
 ):
     """Run the AI agent on a conversation from a JSON file.
 
@@ -122,12 +129,21 @@ def run(
     console.print("-" * 60)
 
     # Initialize the agent
+    if debug:
+        console.print("[dim]⏱️  Initializing agent...[/dim]")
+        start_time = time.time()
+
     agent = ChatAgent(
         openai_key=openai_api_key,
         openai_model=openai_model,
         instructions=instructions,
         agent_name=agent_name,
+        debug=debug,
     )
+
+    if debug:
+        init_time = time.time() - start_time
+        console.print(f"[dim]⏱️  Agent initialized in {init_time:.2f}s[/dim]\n")
 
     # Track if agent said something
     agent_spoke = False
@@ -153,11 +169,13 @@ def run(
         agent.set_group_members(group_members)
 
     # Process each message in the conversation
+    message_number = 0
     for msg in conversation:
         if "member" not in msg or "message" not in msg:
             console.print("[yellow]Warning: Skipping invalid message (missing 'member' or 'message' field)[/yellow]")
             continue
 
+        message_number += 1
         member = msg["member"]
         message = msg["message"]
 
@@ -170,8 +188,16 @@ def run(
         agent_spoke = False
 
         # Let the agent process the message with a spinner
+        if debug:
+            msg_start = time.time()
+
         with console.status(f"[bold green]{agent_name} is thinking...", spinner="dots"):
             agent.listen(member, message)
+
+        if debug:
+            msg_time = time.time() - msg_start
+            is_first = " [yellow](FIRST REQUEST)[/yellow]" if message_number == 1 else ""
+            console.print(f"[dim]⏱️  Message #{message_number} processed in {msg_time:.2f}s{is_first}[/dim]")
 
         # If agent didn't say anything, print "silent" in gray
         if not agent_spoke:

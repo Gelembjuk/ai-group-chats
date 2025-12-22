@@ -1,6 +1,7 @@
 """ChatAgent class for handling AI agent conversations."""
 
 import os
+import time
 from typing import Callable, Optional, List
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, BaseMessage
@@ -11,7 +12,7 @@ from langchain.agents import create_agent
 class ChatAgent:
     """AI agent that listens to group conversations and can optionally respond."""
 
-    def __init__(self, openai_key: str, openai_model: str, instructions: str = "", agent_name: str = "AI Assistant"):
+    def __init__(self, openai_key: str, openai_model: str, instructions: str = "", agent_name: str = "AI Assistant", debug: bool = False):
         """Initialize the ChatAgent.
 
         Args:
@@ -19,11 +20,13 @@ class ChatAgent:
             openai_model: OpenAI model name (e.g., 'gpt-4', 'gpt-3.5-turbo')
             instructions: Instructions for the agent on how to operate
             agent_name: Name of the AI agent (default: "AI Assistant")
+            debug: Enable debug timing output (default: False)
         """
         self.openai_key = openai_key
         self.openai_model = openai_model
         self.instructions = instructions
         self.agent_name = agent_name
+        self.debug = debug
         self.say_callback: Optional[Callable[[str], None]] = None
         self.thoughts_callback: Optional[Callable[[str], None]] = None
         self.agent_said_something = False
@@ -156,15 +159,54 @@ You have access to a 'say' tool. First think (Phase 1), then optionally say (Pha
 
         # Invoke the agent - it will automatically handle tool calls in a loop
         try:
+            if self.debug:
+                invoke_start = time.time()
+                print(f"  🔧 Calling agent_executor.invoke()...")
+
             result = self.agent_executor.invoke({
                 "messages": self.message_history
             })
+
+            if self.debug:
+                invoke_time = time.time() - invoke_start
+                print(f"  🔧 agent_executor.invoke() took {invoke_time:.2f}s")
 
             # Extract the new messages from the result and add to history
             # The agent executor returns all messages including tool calls and responses
             if "messages" in result:
                 # Get only the new messages (everything after our input)
                 new_messages = result["messages"][len(self.message_history):]
+
+                if self.debug:
+                    print(f"  🔧 Received {len(new_messages)} new messages")
+                    # Analyze what messages we got
+                    ai_msg_count = sum(1 for m in new_messages if isinstance(m, AIMessage))
+                    tool_msg_count = sum(1 for m in new_messages if hasattr(m, 'type') and 'tool' in str(type(m)).lower())
+                    print(f"     - AI messages (LLM calls): {ai_msg_count}")
+                    print(f"     - Tool messages: {tool_msg_count}")
+                    if ai_msg_count > 0:
+                        avg_per_call = invoke_time / ai_msg_count
+                        print(f"     - Avg time per LLM call: {avg_per_call:.2f}s")
+
+                    # Show detailed message sequence
+                    print(f"\n  📋 Message sequence:")
+                    for i, msg in enumerate(new_messages, 1):
+                        msg_type = type(msg).__name__
+                        if isinstance(msg, AIMessage):
+                            content_preview = msg.content[:80] + "..." if msg.content and len(msg.content) > 80 else msg.content
+                            tool_calls = len(msg.tool_calls) if hasattr(msg, 'tool_calls') and msg.tool_calls else 0
+                            print(f"     {i}. 🤖 AIMessage: \"{content_preview}\"")
+                            if tool_calls > 0:
+                                print(f"        └─ Tool calls: {tool_calls}")
+                                for tc in msg.tool_calls:
+                                    tool_name = tc.get('name', 'unknown')
+                                    tool_args = tc.get('args', {})
+                                    if tool_name == 'say' and 'message' in tool_args:
+                                        msg_preview = tool_args['message'][:60] + "..." if len(tool_args['message']) > 60 else tool_args['message']
+                                        print(f"           └─ say(\"{msg_preview}\")")
+                        else:
+                            print(f"     {i}. 🔧 {msg_type}")
+                    print()
 
                 # FIRST: Display agent's thoughts (internal reasoning)
                 if self.thoughts_callback:
