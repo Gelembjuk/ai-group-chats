@@ -4,7 +4,7 @@ A collection of experimental applications exploring multi-user interactions with
 
 ## Projects
 
-### [group_in_one_root_with_ai](./group_in_one_root_with_ai)
+### [group_in_one_room_with_ai](./group_in_one_room_with_ai)
 
 An AI agent that listens to group conversations from JSON files and can optionally respond when it has something valuable to contribute. Built with Python, LangChain, and OpenAI, this project simulates group chat scenarios where the AI agent observes messages, maintains context, and decides when to participate in the conversation.
 

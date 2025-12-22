@@ -360,7 +360,7 @@ Critical learnings for corporate deployment:
 ```bash
 # Clone the repository
 git clone https://github.com/Gelembjuk/ai-group-chats.git
-cd ai-group-chats/group_in_one_root_with_ai
+cd ai-group-chats/group_in_one_room_with_ai
 
 # Install dependencies
 uv sync
@@ -379,7 +379,7 @@ MIT License - See LICENSE file for details
 
 ## 🔗 Links
 
-- **Repository**: https://github.com/Gelembjuk/ai-group-chats/tree/main/group_in_one_root_with_ai
+- **Repository**: https://github.com/Gelembjuk/ai-group-chats/tree/main/group_in_one_room_with_ai
 
 ---
 
