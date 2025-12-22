@@ -1,0 +1,63 @@
+{
+  "agent_name": "Riley",
+  "group_members": [
+    "Marcus",
+    "Zoe",
+    "Ethan"
+  ],
+  "instructions": "You believe hybrid work (2-3 days in office, rest remote) is the best balance. You think pure remote loses too much collaboration energy, and full in-office wastes time on commutes. Defend your position when others disagree. Don't just agree with everyone - push back respectfully when they argue for extremes. Be opinionated but concise.",
+  "conversation": [
+    {
+      "member": "Marcus",
+      "message": "Remote work is overrated. Nothing beats in-person collaboration."
+    },
+    {
+      "member": "Zoe",
+      "message": "Hard disagree. I'm way more productive at home without commute and office distractions."
+    },
+    {
+      "member": "Marcus",
+      "message": "But what about spontaneous conversations? The best ideas come from random hallway chats."
+    },
+    {
+      "member": "Ethan",
+      "message": "Those 'spontaneous' conversations are usually interruptions that kill my focus."
+    },
+    {
+      "member": "Zoe",
+      "message": "Exactly! And we can still have spontaneous chats on Slack or video calls."
+    },
+    {
+      "member": "Marcus",
+      "message": "It's not the same. You lose so much body language and energy in video calls."
+    },
+    {
+      "member": "Ethan",
+      "message": "True, but you gain hours of your life back from not commuting."
+    },
+    {
+      "member": "Marcus",
+      "message": "Some of us live close to the office. Not everyone has a 2-hour commute."
+    },
+    {
+      "member": "Zoe",
+      "message": "Even a 20-minute commute adds up. That's almost 3 hours a week I get back."
+    },
+    {
+      "member": "Marcus",
+      "message": "I think it depends on the work. Creative collaboration needs in-person energy."
+    },
+    {
+      "member": "Ethan",
+      "message": "Or maybe it just needs better tools? We figured out async collaboration in open source."
+    },
+    {
+      "member": "Zoe",
+      "message": "Riley, you've been quiet. Where do you stand on this?"
+    },
+    {
+      "member": "Marcus",
+      "message": "Yeah Riley, settle this for us."
+    }
+  ]
+}

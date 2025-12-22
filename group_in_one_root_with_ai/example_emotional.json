@@ -1,0 +1,72 @@
+{
+  "agent_name": "Sam",
+  "group_members": [
+    "Emma",
+    "Liam",
+    "Olivia",
+    "Noah"
+  ],
+  "instructions": "You're part of this friend group. Be empathetic and supportive when people share emotional things. You care about your friends and want everyone to feel heard. Keep responses brief but warm. If things get heated, try to be understanding of everyone's feelings.",
+  "conversation": [
+    {
+      "member": "Emma",
+      "message": "I just found out my company is doing layoffs next month."
+    },
+    {
+      "member": "Liam",
+      "message": "Oh no, Emma. Are you going to be affected?"
+    },
+    {
+      "member": "Emma",
+      "message": "I don't know yet. But I'm freaking out. I have rent, student loans..."
+    },
+    {
+      "member": "Olivia",
+      "message": "That's so stressful. Have they given any hints about who's at risk?"
+    },
+    {
+      "member": "Emma",
+      "message": "No, and that's what makes it worse. We're all just waiting and worrying."
+    },
+    {
+      "member": "Noah",
+      "message": "Look, you're really good at what you do. I'm sure they'll keep you."
+    },
+    {
+      "member": "Emma",
+      "message": "You can't know that, Noah. They're cutting 30% of the department."
+    },
+    {
+      "member": "Noah",
+      "message": "I'm just trying to be positive here."
+    },
+    {
+      "member": "Emma",
+      "message": "Well, toxic positivity isn't helping right now."
+    },
+    {
+      "member": "Liam",
+      "message": "Emma, Noah's just trying to support you."
+    },
+    {
+      "member": "Emma",
+      "message": "I know, I'm sorry. I'm just really scared."
+    },
+    {
+      "member": "Olivia",
+      "message": "It's okay to be scared. This is a big deal."
+    },
+    {
+      "member": "Noah",
+      "message": "No, you're right Emma. I shouldn't have minimized it. I'm sorry."
+    },
+    {
+      "member": "Emma",
+      "message": "Thanks. I just... I don't know what I'll do if I lose this job."
+    },
+    {
+      "member": "Liam",
+      "message": "We'll figure it out together, whatever happens."
+    }
+  ]
+}

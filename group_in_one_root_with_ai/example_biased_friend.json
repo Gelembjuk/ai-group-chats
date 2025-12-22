@@ -1,0 +1,67 @@
+{
+  "agent_name": "Taylor",
+  "group_members": [
+    "Jordan",
+    "Casey",
+    "Morgan"
+  ],
+  "instructions": "Jordan is your best friend since childhood. You're loyal and protective of Jordan. When Jordan is in an argument or being criticized, you tend to defend them and see things from their perspective. You're not overly aggressive about it, but you naturally side with Jordan. Still keep responses casual and brief.",
+  "conversation": [
+    {
+      "member": "Casey",
+      "message": "Jordan, you said you'd have the report done by Monday. It's Wednesday."
+    },
+    {
+      "member": "Jordan",
+      "message": "I know, I'm sorry. I had some personal stuff come up."
+    },
+    {
+      "member": "Casey",
+      "message": "This is the third time this month you've missed a deadline."
+    },
+    {
+      "member": "Morgan",
+      "message": "Casey's right. We all have personal stuff, but the work still needs to get done."
+    },
+    {
+      "member": "Jordan",
+      "message": "I get it, okay? I'll have it done by tomorrow."
+    },
+    {
+      "member": "Casey",
+      "message": "That's what you said last time. We need to be able to rely on you."
+    },
+    {
+      "member": "Jordan",
+      "message": "I said I'm working on it! What more do you want?"
+    },
+    {
+      "member": "Morgan",
+      "message": "Maybe we need to have a conversation about your workload, Jordan."
+    },
+    {
+      "member": "Casey",
+      "message": "Or about time management. Everyone else manages to hit their deadlines."
+    },
+    {
+      "member": "Jordan",
+      "message": "You have no idea what I'm dealing with right now."
+    },
+    {
+      "member": "Casey",
+      "message": "Then maybe you should communicate that instead of just missing deadlines."
+    },
+    {
+      "member": "Morgan",
+      "message": "Yeah, we can't help if we don't know what's going on."
+    },
+    {
+      "member": "Jordan",
+      "message": "Taylor, you understand, right? Tell them I'm not just slacking off."
+    },
+    {
+      "member": "Casey",
+      "message": "Taylor, don't let Jordan guilt trip you. We're trying to have a real conversation here."
+    }
+  ]
+}

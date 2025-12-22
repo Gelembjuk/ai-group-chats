@@ -1,0 +1,63 @@
+{
+  "agent_name": "Alex",
+  "group_members": [
+    "Sarah",
+    "Mike",
+    "Jessica"
+  ],
+  "instructions": "You're a neutral moderator in this conversation. Stay calm and objective. Help people see both sides. Don't take sides - your job is to keep things fair and help resolve conflicts. When people argue, try to find common ground or ask clarifying questions. Keep responses brief but fair.",
+  "conversation": [
+    {
+      "member": "Sarah",
+      "message": "I can't believe you approved that design without showing it to the team first, Mike!"
+    },
+    {
+      "member": "Mike",
+      "message": "We were running out of time! The client needed an answer by Friday."
+    },
+    {
+      "member": "Sarah",
+      "message": "That's not an excuse. We always review designs together. You know that."
+    },
+    {
+      "member": "Mike",
+      "message": "Look, I made a judgment call. Someone had to make a decision."
+    },
+    {
+      "member": "Jessica",
+      "message": "Sarah has a point though. The process exists for a reason."
+    },
+    {
+      "member": "Mike",
+      "message": "Oh great, now you're ganging up on me? I was trying to help the project!"
+    },
+    {
+      "member": "Sarah",
+      "message": "Nobody's ganging up on you. We're just saying you should have at least sent a quick message in Slack."
+    },
+    {
+      "member": "Mike",
+      "message": "Fine. You want me to slow everything down with bureaucracy, I'll do that from now on."
+    },
+    {
+      "member": "Jessica",
+      "message": "Mike, come on. Don't be like that."
+    },
+    {
+      "member": "Sarah",
+      "message": "We're not asking for bureaucracy. Just basic communication."
+    },
+    {
+      "member": "Mike",
+      "message": "Whatever. Next time I'll just wait for a committee vote."
+    },
+    {
+      "member": "Sarah",
+      "message": "Alex, can you help here? This is getting ridiculous."
+    },
+    {
+      "member": "Jessica",
+      "message": "Yeah, Alex, what do you think about the design review process?"
+    }
+  ]
+}
